@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users table</title>
+</head>
+<body>
+<div>
+    <table border="1" >
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Lastname</th>
+            <th>Age</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each ="cl : ${messages}">
+            <td th:utext="${cl.id}">...</td>
+            <td th:utext="${cl.name}">...</td>
+            <td th:utext="${cl.lastName}">...</td>
+            <td th:utext="${cl.age}">...</td>
+            <td> <a th:href="@{edit/{id}(id=${cl.id})}">Edit</a>
+             <a th:href="@{delete/{id}(id=${cl.id})}">Delete</a> </td>
+        </tr>
+    </table>
+<!--    <th:block th:each="msg : ${messages}">-->
+<!--        <h1 th:text="${msg}"></h1>-->
+<!--    </th:block>-->
+</div>
+<a href="/addUser">Add User</a>
+</body>
+</html>

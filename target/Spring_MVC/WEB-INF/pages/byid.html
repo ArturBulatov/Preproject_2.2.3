@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User by id</title>
+</head>
+<body>
+<table border="1" >
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Lastname</th>
+        <th>Age</th>
+    </tr>
+    <tr th:each ="cl : ${user}">
+        <td th:utext="${cl.id}">...</td>
+        <td th:utext="${cl.name}">...</td>
+        <td th:utext="${cl.lastName}">...</td>
+        <td th:utext="${cl.age}">...</td>
+    </tr>
+</table>
+<!--<p th:text="${user.toString()}">VALUE</p>-->
+</body>
+</html>

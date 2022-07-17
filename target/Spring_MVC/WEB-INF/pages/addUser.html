@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:form="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>New user</title>
+</head>
+<body>
+
+<h1>Add User details</h1>
+
+    <form th:method="POST" th:action="@{/}" th:object="${user}">
+        <table>
+            <tr>
+                <td> <label for ="name">Enter name:  </label></td>
+                <td><input type="text" th:field="*{name}" id="name"/></td>
+            </tr>
+            <tr>
+                <td><label for ="lastName">Enter lastName: </label></td>
+                <td><input type="text" th:field="*{lastName}" id="lastName"/></td>
+            </tr>
+            <tr>
+                <td><label for ="age">Enter age:     </label></td>
+                <td><input type="text" th:field="*{age}" id="age"/></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Create"/></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
