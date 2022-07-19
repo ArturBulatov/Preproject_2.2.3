@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import web.dao.UserDao;
+import web.Service.UserService;
 import web.models.User;
 
 import java.util.List;
@@ -12,10 +12,10 @@ import java.util.List;
 @Controller
 public class UserController {
 
-	private final UserDao userService;
+	private final UserService userService;
 
 	@Autowired
-	public UserController(UserDao userService) {
+	public UserController(UserService userService) {
 		this.userService = userService;
 	}
 
@@ -45,10 +45,7 @@ public class UserController {
 
 	@GetMapping("delete/{id}")
 	public  String delete(@PathVariable("id") Long id) {
-		System.out.println(id);
-		System.out.println(userService.getOne(id));
 		userService.delete(userService.getOne(id));
-		System.out.println("deleting");
 		return "redirect:/";
 }
 	@GetMapping("/edit/{id}")

@@ -4,10 +4,9 @@ import org.springframework.stereotype.Component;
 import web.models.User;
 
 import javax.persistence.*;
-import javax.transaction.Transactional;
 import java.util.List;
+
 @Component
-@Transactional
 public class UserDaoImp implements UserDao {
     @PersistenceContext
     private EntityManager entityManager;
